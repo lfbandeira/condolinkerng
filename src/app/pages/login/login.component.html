@@ -1,0 +1,54 @@
+<div class="grid">
+  <div class="col-12">
+    <div class="flex justify-content-center align-content-center text-align-center">
+      <!-- LOGIN -->
+
+      <form [formGroup]="loginForm" (ngSubmit)="logar()">
+        <p-card styleClass="mt-8" *ngIf="loginCard">
+          <div class="flex justify-content-center align-content-center text-align-center">
+            <span style="font-weight:bold; font-size: large;">Administrador</span>
+          </div>
+          <div class="flex justify-content-center align-content-center text-align-center">
+
+            <img style="height: 150px; width: 150px; margin-bottom: 30;" src="../../../assets/logo.jpg">
+          </div>
+          <div class="flex justify-content-center align-content-center text-align-center">
+            <input style="margin-top: 20px;" type="text" pInputText placeholder="cpf" formControlName="cpf" />
+          </div>
+          <div class="flex justify-content-center align-content-center text-align-center mt-3">
+            <input type="password" pInputText placeholder="Senha" formControlName="senha" />
+          </div>
+          <div class="card flex justify-content-center mt-3">
+            <button type="submit" pButton pRipple label="Login" [disabled]="!this.loginForm.valid"></button>
+          </div>
+          <span
+            class="flex justify-content-center align-content-center text-align-center mt-3 text-red-600 font-semibold"
+            (click)="loginCard = !loginCard" style="cursor: pointer;">Criar Conta</span>
+        </p-card>
+      </form>
+
+      <!-- SIGNUP -->
+      <form [formGroup]="formCadastro" (ngSubmit)="criarConta()">
+        <p-card styleClass="mt-8" header="Criar conta" *ngIf="!loginCard">
+
+          <div class="flex justify-content-center align-content-center text-align-center mt-3">
+            <input type="text" pInputText placeholder="nome" formControlName="nome" />
+          </div>
+
+          <div class="flex justify-content-center align-content-center text-align-center mt-3">
+            <input type="text" pInputText placeholder="cpf" formControlName="cpf" />
+          </div>
+          <div class="flex justify-content-center align-content-center text-align-center mt-3">
+            <input type="password" pInputText placeholder="Senha" formControlName="senha" />
+          </div>
+          <div class="card flex justify-content-center mt-3">
+            <button type="submit" pButton pRipple label="Criar conta"></button>
+          </div>
+          <span
+            class="flex justify-content-center align-content-center text-align-center mt-3 text-red-600 font-semibold"
+            style="cursor: pointer;" (click)="loginCard = !loginCard">Fazer login</span>
+        </p-card>
+      </form>
+    </div>
+  </div>
+</div>
