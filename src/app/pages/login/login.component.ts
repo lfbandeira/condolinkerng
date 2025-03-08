@@ -14,8 +14,8 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  constructor(private servico:UsuarioService, 
-    private formBuilder:FormBuilder, 
+  constructor(private servico:UsuarioService,
+    private formBuilder:FormBuilder,
     private cookieService : CookieService,
     private messageService: MessageService,
     private router : Router){}
@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           detail:`Bem vindo ${response.name}`,
           life:2000
           })
-         this.router.navigate(['/dashboard']);   
+         this.router.navigate(['/dashboard']);
       },
       error:(error)=> {
         this.messageService.add({
@@ -80,7 +80,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
 
   criarConta():void{
-    console.log(this.formCadastro.value)
+    //console.log(this.formCadastro.value)
     this.servico.cadastrarConta(
       this.formCadastro.controls.cpf.value as string,
       this.formCadastro.controls.nome.value as string,
