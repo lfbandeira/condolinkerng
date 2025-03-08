@@ -10,7 +10,7 @@ export class UsuarioService {
 
   constructor(private http: HttpClient, private cookie: CookieService) { }
   login(cpf: string, senha: string): Observable<any> {
-    return this.http.post('auth/loginmaster', {
+    return this.http.post('dev/auth/loginmaster', {
       "cpf": cpf,
       "senha": senha,
     })
@@ -18,7 +18,7 @@ export class UsuarioService {
 
   cadastrarConta(cpf: string, nome: string, senha: string): Observable<any> {
 
-    return this.http.post('auth/registerMaster', {
+    return this.http.post('dev/auth/registerMaster', {
       "cpf": cpf,
       "nome": nome,
       "senha": senha,

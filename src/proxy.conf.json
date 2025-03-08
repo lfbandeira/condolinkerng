@@ -1,6 +1,6 @@
 {
-    "/auth": {
-        "target": "http://localhost:8080/",
+    "/dev": {
+        "target": "https://80q641pai7.execute-api.sa-east-1.amazonaws.com/",
         "secure": false,
         "changeOrigin": true
     }
