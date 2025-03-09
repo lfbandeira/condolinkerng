@@ -1,21 +1,26 @@
 .grid {
-  background-image: url("../../../assets/fundo.jpg") !important;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   height: 100vmin;
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
 }
+
+
 
 @media screen and (min-width: 1400px) {
   .grid {
     background-position: top;
-
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
   }
 }
 
-@media screen and (max-width:1000px){
-  .grid{
-     height:100vmax;
-     }
-   }
-  
+@media screen and (max-width:1000px) {
+  .grid {
+    height: 100vmax;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+  }
+}
