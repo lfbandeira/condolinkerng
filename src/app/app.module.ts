@@ -29,6 +29,7 @@ import { MessageService } from 'primeng/api';
     InputTextModule,
     ButtonModule,
     ToastModule,
+
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

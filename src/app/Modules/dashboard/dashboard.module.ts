@@ -11,8 +11,8 @@ import { RouterModule } from '@angular/router';
 import { DashboardHomeComponent } from './page/dashboard-home/dashboard-home.component';
 import { SidebarModule} from 'primeng/sidebar';
 import { ToolbarModule} from 'primeng/toolbar';
-
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { ToolbarModule} from 'primeng/toolbar';
     ToolbarModule,
     CardModule,
     ToastModule,
-
+    MatToolbarModule,
+    MatCardModule
   ],
   providers:[
     MessageService,
