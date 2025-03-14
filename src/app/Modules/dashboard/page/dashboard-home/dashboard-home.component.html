@@ -1,11 +1,13 @@
-<mat-toolbar color="primary">
-  CondoLinker
-</mat-toolbar>
-<section class="container">
+<mat-toolbar color="primary"> CondoLinker </mat-toolbar>
+<div class="container responsive-grid">
+  <mat-card *ngFor="let func of funcionalidades">
+    <mat-card-header>
+      <mat-card-title>{{ func.descFuncionalidade }} </mat-card-title>
+    </mat-card-header>
+    <br />
+    <div style="align-items: center; justify-content: center; align-content: center; text-align: center;">
+      <img mat-card-image [src]="func.sourceIcone" />
+    </div>
 
-  <div class="item" *ngFor="let func of funcionalidades ">
-   <p> {{func.desc_funcionalidade}} </p>
-   <img src={{func.source_icone}}>
-  </div>
-
-</section>
+  </mat-card>
+</div>
