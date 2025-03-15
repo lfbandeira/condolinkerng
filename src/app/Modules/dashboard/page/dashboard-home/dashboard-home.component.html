@@ -6,8 +6,9 @@
     </mat-card-header>
     <br />
     <div style="align-items: center; justify-content: center; align-content: center; text-align: center;">
-      <img mat-card-image [src]="func.sourceIcone" />
+      <img mat-card-image [src]="func.sourceIcone" (click) =redireciona(func.linkPagina) />
     </div>
 
   </mat-card>
 </div>
+

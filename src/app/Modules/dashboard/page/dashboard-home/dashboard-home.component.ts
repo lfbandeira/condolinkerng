@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Funcionalidade } from 'src/app/interfaces/Funcionalidade';
 import { FuncionalidadeService } from 'src/app/services/funcionalidade.service';
 
@@ -9,8 +10,12 @@ import { FuncionalidadeService } from 'src/app/services/funcionalidade.service';
 })
 export class DashboardHomeComponent {
   funcionalidades:Funcionalidade[] = [];
-  constructor(private servico:FuncionalidadeService,) {
+  constructor(private servico:FuncionalidadeService,private router : Router) {
     this.consultaFuncionalidades();
+  }
+
+  redireciona(caminho:string):void{
+    this.router.navigate([`/${caminho}`]);
   }
 
  consultaFuncionalidades():void{
@@ -23,6 +28,7 @@ export class DashboardHomeComponent {
       },
       error:(error)=> {
         console.log(error)
+        this.router.navigate([`/login`]);
       },
     })
   }

@@ -4,31 +4,39 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-{
-  path:'login',
-  component:LoginComponent,
-},
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
 
-{
-  path:'',
-  redirectTo:'dashboard',
-  pathMatch:'full'
-},
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  },
 
-{
-  path:'dashboard',
- loadChildren:()=>
- import('./Modules/dashboard/dashboard.module').then(
-  (m)=> m.DashboardModule
- ),
- canActivate:[AuthGuard]
-},
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./Modules/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'FuncionalidadeList',
+    loadChildren: () =>
+      import('./Modules/Funcionalidade/funcionalidade.module').then(
+        (m) => m.FuncionalidadeModule
+      ),
+    canActivate: [AuthGuard],
+  },
 
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

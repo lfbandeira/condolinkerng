@@ -1,1 +1,15 @@
-<p>funcionalidade works!</p>
+  <div class="container">
+    <mat-form-field>
+      <mat-label>Selecione um condominio</mat-label>
+      <mat-select [(ngModel)]="condominioSelecionado" name="condominio"
+      (selectionChange)="consultaFuncionalidades()"
+      >
+        <mat-option *ngFor="let condominio of condominios" [value]="condominio.cnpj"
+        >{{condominio.razaoSocial}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+

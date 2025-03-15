@@ -26,4 +26,17 @@ export class FuncionalidadeService {
       }
      );
     }
+
+    buscaPorCondominio(cnpj:string): Observable<any> {
+      return this.http.get('auth/funcionalidadescondominio',
+        {
+          params:{
+            cnpj:cnpj
+          },
+          headers:{
+            Authorization: `Bearer ${this.token}`
+          }
+        }
+       );
+      }
 }
